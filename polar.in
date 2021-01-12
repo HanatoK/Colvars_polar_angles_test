@@ -1,0 +1,171 @@
+colvarsTrajFrequency            10
+colvarsRestartFrequency         500
+
+colvar {
+  name                polarTheta1
+  polarTheta {
+    atoms {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}
+
+colvar {
+  name                polarTheta2
+  polarTheta {
+    atoms {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+    ref {
+      atomsFile       protein.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}
+
+colvar {
+  name polarThetaTCL
+  scriptedFunction polarTheta
+  distanceDir {
+    group1 {
+      atomsFile       protein.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+    group2 {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}
+
+colvar {
+  name                polarPhi1
+  polarPhi {
+  
+    atoms {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}
+
+colvar {
+  name                polarPhi2
+  polarPhi {
+    atoms {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+    ref {
+      atomsFile       protein.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}
+
+colvar {
+  name polarPhiTCL
+  scriptedFunction polarPhi
+  distanceDir {
+    group1 {
+      atomsFile       protein.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+    group2 {
+      atomsFile       ligand.pdb
+      atomsCol        B
+      atomsColValue   1.0
+      centerReference on
+      rotateReference on
+      refPositionsFile protein.pdb
+      fittingGroup {
+        atomsFile protein.pdb
+        atomsCol B
+        atomsColValue 1.0
+      }
+    }
+  }
+}

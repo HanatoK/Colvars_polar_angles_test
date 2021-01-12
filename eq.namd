@@ -1,0 +1,133 @@
+# TOPOLOGY
+
+structure            1SE0.psf
+temperature 300.0
+
+# FORCE FIELD
+
+parameters       par_all36m_prot.prm
+parameters       water_ions.prm
+
+paraTypeCharmm       on
+
+
+# 1-4 TERMs
+
+exclude              scaled1-4
+1-4scaling           1.0
+
+
+# INPUT FILES
+
+coordinates          1SE0.pdb
+
+cellBasisVector1 70.54299926757812 0 0
+cellBasisVector2 0 70.5979995727539 0
+cellBasisVector3 0 0 70.572998046875
+cellOrigin -0.10201109200716019 0.05301899462938309 -0.0587342344224453
+
+# OUTPUT FILES
+
+binaryoutput         yes
+binaryrestart        yes
+
+outputname           output/polar
+restartname          output/polar.restart
+
+
+# DCD FILE
+
+dcdFile              output/polar.dcd
+dcdUnitCell          yes
+
+
+# FREQUENCY FOR DUMPING OUTPUT DATA
+
+outputenergies       1
+outputtiming         500
+outputpressure       500
+restartfreq          500
+XSTFreq              500
+dcdFreq              500
+
+
+# CUT-OFFs
+
+hgroupcutoff         2.8
+switching            on
+switchdist           10.0
+cutoff               12.0
+pairlistdist         14.0
+
+
+# WRAPPING
+
+wrapAll              off
+wrapWater            on
+
+
+# CONSTANT-T
+
+stochRescale             on
+stochRescaleTemp         300
+stochRescalePeriod       2.0 
+
+
+# CONSTANT-P
+
+langevinpiston       on 
+langevinpistontarget 1.01325 
+langevinpistonperiod 200
+langevinpistondecay  100
+langevinpistontemp   300
+
+strainrate           0.  0.  0.
+usegrouppressure     yes
+
+useflexiblecell      no  
+
+
+# PME
+
+PME                  yes
+PMETolerance         10e-6
+PMEInterpOrder       4
+PMEGridSpacing       1.0
+
+
+# MULTIPLE TIME-STEP PROPAGATOR
+
+timestep             2.0
+
+fullelectfrequency   2
+nonbondedfreq        1
+
+
+# SHAKE/RATTLE
+
+rigidbonds           all     
+rigidtolerance       0.00001
+rigiditerations      400
+
+
+# PARALLELISM
+
+stepspercycle        10
+splitpatch           hydrogen
+margin               2
+
+
+##################################################
+# ABF SECTION
+##################################################
+
+source CVs.tcl
+
+colvars              on
+colvarsConfig        polar.in
+
+# minimize             100
+# reinitvels           300
+
+run 5000
+
