@@ -40,19 +40,7 @@ colvar {
       atomsColValue   1.0
       centerReference on
       rotateReference on
-      refPositionsFile protein.pdb
-      fittingGroup {
-        atomsFile protein.pdb
-        atomsCol B
-        atomsColValue 1.0
-      }
-    }
-    ref {
-      atomsFile       protein.pdb
-      atomsCol        B
-      atomsColValue   1.0
-      centerReference on
-      rotateReference on
+      centerToOrigin  on
       refPositionsFile protein.pdb
       fittingGroup {
         atomsFile protein.pdb
@@ -125,19 +113,7 @@ colvar {
       atomsColValue   1.0
       centerReference on
       rotateReference on
-      refPositionsFile protein.pdb
-      fittingGroup {
-        atomsFile protein.pdb
-        atomsCol B
-        atomsColValue 1.0
-      }
-    }
-    ref {
-      atomsFile       protein.pdb
-      atomsCol        B
-      atomsColValue   1.0
-      centerReference on
-      rotateReference on
+      centerToOrigin  on
       refPositionsFile protein.pdb
       fittingGroup {
         atomsFile protein.pdb

@@ -124,7 +124,7 @@ margin               2
 source CVs.tcl
 
 colvars              on
-colvarsConfig        polar.in
+colvarsConfig        polar_centertoorigin.in
 
 # minimize             100
 # reinitvels           300
